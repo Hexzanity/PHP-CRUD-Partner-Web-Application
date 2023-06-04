@@ -159,5 +159,5 @@ For Questions and Further Assistance, you can Contact us using
 
 Copyright (c) [2023] [Hector A. Herrera Jr.]
 
-DO NOT COPY THIS FOR FUNNY PURPOSES
+CREDITS TO THE OWNER OF COMPANY Nike©
 
