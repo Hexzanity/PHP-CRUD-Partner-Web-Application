@@ -43,12 +43,6 @@
 
 <br> </br>
 
-![Index Page](images/index-page.png)
-
-*The image above shows the index Page*
-
-<br> </br>
-
 ![Sign In Index Page](images/signin-page.png)
 
 *The image above shows the Sign-in Page*
