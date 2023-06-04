@@ -136,6 +136,14 @@
 - **Sales Tracking** 
 - **Transaction Tracking**
 
+Accounts:
+ - Admin
+   - Username: admin
+   - Password: admin01
+ - User
+   - Username: hector@gmail.com
+   - Password: hector01
+
 # Support
 
 For Questions and Further Assistance, you can Contact us using
