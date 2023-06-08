@@ -80,7 +80,7 @@ CREATE TABLE `client` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `client` (
 
 LOCK TABLES `client` WRITE;
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
-INSERT INTO `client` VALUES (1,'Hector','Herrera','1992-01-01','Valencia','hector@gmail.com','hector01'),(2,'Mark','Zuckerberg','1995-01-07','Manalo','mark@gmail.com','mark01'),(3,'Athena','Victoria','2023-04-12','Tiniguiban','athena@gmail.com','athena123'),(4,'Christian','Bale','1993-02-17','Sicsican','hehe@gmail.com','hehe123'),(5,'Bruce','Willis','1979-02-06','Caloocan','Bruce@gmail.com','bruce123'),(6,'Jay Ar','Palo','2007-01-09','San Jose','jr@gmail.com','jr123');
+INSERT INTO `client` VALUES (1,'Hector','Herrera','1992-01-01','Valencia','hector@gmail.com','hector01'),(2,'Mark','Zuckerberg','1995-01-07','Manalo','mark@gmail.com','mark01'),(3,'Athena','Victoria','2023-04-12','Tiniguiban','athena@gmail.com','athena123'),(4,'Christian','Bale','1993-02-17','Sicsican','hehe@gmail.com','hehe123'),(5,'Bruce','Willis','1979-02-06','Caloocan','Bruce@gmail.com','bruce123'),(6,'Jay Ar','Palo','2007-01-09','San Jose','jr@gmail.com','jr123'),(7,'Perry','Macal','2023-06-03','Macau','perry@gmail.com','123'),(8,'Perry','Macal','2023-06-03','Macau','perry@gmail.com','123'),(9,'Perry','Macal','2023-06-03','Macau','perry@gmail.com','123'),(10,'Nems','Dela Cruz','2023-06-09','111 - E Valencia St.','nems@gmail.com','123');
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +112,7 @@ CREATE TABLE `orders` (
   KEY `client_id_idx` (`client_id`),
   CONSTRAINT `client_id` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
   CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +121,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,1,'2023-04-26 14:34:44',1,1,'2023-05-11'),(2,1,'2023-04-26 14:34:44',2,1,'2023-05-11'),(3,1,'2023-04-26 14:34:44',3,1,'2023-05-11'),(4,1,'2023-04-26 14:34:44',4,1,'2023-05-11'),(5,3,'2023-04-26 14:35:06',7,1,'2023-05-11'),(6,3,'2023-04-26 14:35:06',8,1,'2023-05-11'),(7,2,'2023-04-26 14:35:33',5,2,'2023-05-11'),(8,2,'2023-04-26 14:35:33',6,3,'2023-05-11'),(9,2,'2023-04-27 01:50:15',1,1,'2023-05-12'),(10,2,'2023-04-27 01:50:15',2,1,'2023-05-12'),(11,2,'2023-04-27 01:50:15',3,1,'2023-05-12');
+INSERT INTO `orders` VALUES (1,1,'2023-04-26 14:34:44',1,1,'2023-05-11'),(2,1,'2023-04-26 14:34:44',2,1,'2023-05-11'),(3,1,'2023-04-26 14:34:44',3,1,'2023-05-11'),(4,1,'2023-04-26 14:34:44',4,1,'2023-05-11'),(5,2,'2023-04-26 14:35:33',5,2,'2023-05-11'),(6,2,'2023-04-26 14:35:33',6,3,'2023-05-11'),(7,2,'2023-04-27 01:50:15',1,1,'2023-05-12'),(8,2,'2023-04-27 01:50:15',2,1,'2023-05-12'),(9,2,'2023-04-27 01:50:15',3,1,'2023-05-12'),(10,1,'2023-06-04 22:22:24',6,2,'2023-06-20'),(11,1,'2023-06-04 22:22:37',6,2,'2023-06-20'),(12,1,'2023-06-04 22:23:01',6,2,'2023-06-20'),(13,1,'2023-06-04 22:23:06',6,2,'2023-06-20'),(14,1,'2023-06-04 22:23:24',6,2,'2023-06-20'),(15,1,'2023-06-04 22:24:35',6,2,'2023-06-20'),(16,1,'2023-06-04 22:25:06',1,1,'2023-06-20'),(17,1,'2023-06-08 08:03:42',1,1,'2023-06-23'),(18,1,'2023-06-08 08:04:45',1,1,'2023-06-23'),(19,1,'2023-06-08 08:05:13',1,1,'2023-06-23'),(20,1,'2023-06-08 08:08:01',1,1,'2023-06-23'),(21,1,'2023-06-08 08:09:36',1,1,'2023-06-23'),(22,1,'2023-06-08 08:13:29',1,1,'2023-06-23'),(23,1,'2023-06-08 08:14:25',1,1,'2023-06-23'),(24,1,'2023-06-08 08:15:06',1,1,'2023-06-23'),(25,1,'2023-06-08 08:15:48',1,1,'2023-06-23'),(26,1,'2023-06-08 08:15:58',1,1,'2023-06-23'),(27,1,'2023-06-08 08:17:49',1,1,'2023-06-23'),(28,1,'2023-06-08 08:44:13',3,1,'2023-06-23');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +146,7 @@ CREATE TABLE `products` (
   KEY `supplier_id` (`supplier_id`),
   CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
   CONSTRAINT `supplier_id` FOREIGN KEY (`supplier_id`) REFERENCES `supplier` (`supplier_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,7 +155,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Nike Pegasus 40','R/W','47',6535,21,1,1),(2,'Nike Blaze Low \'77','Br/W','49',5059,20,1,1),(3,'Air Jordan Mid SE','Bl/W','50',7500,30,1,1),(4,'Nike Air Max SYSTM','R/W','48',6500,22,1,1),(5,'Nike Sportswear','Blue','L',1250,24,2,2),(6,'Nike Dri-FIT Ready(Exclusive)','Coral Green','L',2650,13,2,2),(7,'Nike Sportswear Essentials','Navy Blue','S - Stretchable',1895,11,2,2),(8,'Nike Sportswear(Limited)','Black /Pink','S - Stretchable',2100,15,2,2);
+INSERT INTO `products` VALUES (1,'Nike Pegasus 40','R/W','47',6535,15,1,1),(2,'Nike Blaze Low \'77','Br/W','49',5059,20,1,1),(3,'Air Jordan Mid SE','Bl/W','50',7500,29,1,1),(4,'Nike Air Max SYSTM','R/W','48',6500,22,1,1),(5,'Nike Sportswear','Blue','L',1250,24,2,2),(6,'Nike Dri-FIT Ready(Exclusive)','Coral Green','L',2650,13,2,2),(7,'Nike Sportswear Essentials','Navy Blue','S - Stretchable',1895,11,2,2),(8,'Nike Sportswear(Limited)','Black /Pink','S - Stretchable',2100,15,2,2),(9,'Nike Air Redz','R/W','43',2300,100,1,2);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-02 19:06:24
+-- Dump completed on 2023-06-09  0:51:38

@@ -11,15 +11,9 @@
 		<noscript><link rel="stylesheet" href="asset/css/noscript.css" /></noscript>
 	</head>
 	<body class="landing is-preload">
-
-		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
-				<!-- Header -->
 					<header id="header" class="alt">
 					</header>
-
-				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
 							<h2>Nike</h2>
@@ -34,8 +28,6 @@
 					</section>
 					<section id="one">
 					</section>
-
-				<!-- Two -->
 					<section id="two" class="wrapper alt style2">
 						<section class="spotlight">
 							<div>
@@ -53,20 +45,13 @@
 							</div>
 						</section>
 					</section>
-
-				<!-- Three -->
 					<section id="three" class="wrapper style4">
 						<div class="inner">
 					</section>
-
-				<!-- CTA -->
 					<section id="cta" class="wrapper style4">
 						<div class="inner">
-
 						</div>
 					</section>
-
-				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
 							<li><a href="https://www.facebook.com/hexzy1925" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -78,8 +63,6 @@
 					</footer>
 
 			</div>
-
-		<!-- Scripts -->
 			<script src="asset/js/jquery.min.js"></script>
 			<script src="asset/js/jquery.scrollex.min.js"></script>
 			<script src="asset/js/jquery.scrolly.min.js"></script>

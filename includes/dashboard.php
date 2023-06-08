@@ -1,6 +1,6 @@
 <?php
-include('includes\..\includes\header.php');
-include('includes\..\includes\Dash-dash.php');
+include 'includes\..\includes\header.php';
+include 'includes\..\includes\Dash-dash.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +16,7 @@ include('includes\..\includes\Dash-dash.php');
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Total Earned</p>
                 <h4 class="mb-0">
-                <?php include('dashtables/total_earn.php');?>
+                <?php include 'dashtables/total_earn.php'; ?>
                 </h4>
               </div>
             </div>
@@ -35,7 +35,7 @@ include('includes\..\includes\Dash-dash.php');
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Clients</p>
                 <h4 class="mb-0">
-                <?php include('dashtables/CNum.php');?>
+                <?php include 'dashtables/CNum.php'; ?>
                 </h4>
               </div>
             </div>
@@ -55,7 +55,7 @@ include('includes\..\includes\Dash-dash.php');
                 </div>
               </div>
             </div>
-            <?php include('includes\Category.php');?>
+            <?php include 'includes\Category.php'; ?>
           </div>
         </div>
       </div>
@@ -70,13 +70,13 @@ include('includes\..\includes\Dash-dash.php');
                 </div>
               </div>
             </div>
-            <?php include('includes\graphs.php');?>
+            <?php include 'includes\graphs.php'; ?>
           </div>
         </div>
       </div>
     </div>
     
-  <!--   Core JS Files   -->
+
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>

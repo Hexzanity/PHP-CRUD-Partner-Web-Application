@@ -1,22 +1,31 @@
 <?php
-include ('../config/db.php');
-include('../config/header-sign.php');
+include '../config/db.php';
+include '../config/header-sign.php';
 
-if (isset($_POST['submit'])) {
-  $fname = mysqli_real_escape_string($db, $_POST['fname']);
-  $lname = mysqli_real_escape_string($db, $_POST['lname']);
-  $birthday = mysqli_real_escape_string($db, $_POST['birthday']);
-  $address = mysqli_real_escape_string($db, $_POST['address']);
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $fname = $_POST['Fname'];
+    $lname = $_POST['Lname'];
+    $birthday = $_POST['Birthday'];
+    $address = $_POST['address'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-  $sql = "INSERT INTO client (Fname, Lname, Birthday, address, email, password)
-          VALUES ('$fname', '$lname', '$birthday', '$address','$email','$password')";
+    $fname = mysqli_real_escape_string($db, $_POST['Fname']);
+    $lname = mysqli_real_escape_string($db, $_POST['Lname']);
+    $birthday = mysqli_real_escape_string($db, $_POST['Birthday']);
+    $address = mysqli_real_escape_string($db, $_POST['address']);
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
 
-  if (mysqli_query($db, $sql)) {
-    echo "<script>alert('You created account successfully');</script>";
-  } else {
-    echo '
+    $insertQuery = "INSERT INTO client (Fname, Lname, Birthday, address, email, password) VALUES ('$fname','$lname', '$birthday', '$address', '$email',$password)";
+
+    if (mysqli_query($db, $insertQuery)) {
+        echo '<div class="container justify-content-center mt-4">';
+        echo '<div class="alert alert-success">Account added successfully.</div>';
+        echo '</div>';
+        echo '</div>';
+    } else {
+        echo '
     <div class="alert alert-danger" role="alert">
     Incorrect <a href="#" class="alert-link">Please fill the empty field</a>. Try Again.
     <button style="color:Black" type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -24,13 +33,13 @@ if (isset($_POST['submit'])) {
     </button>
     </div>
   ';
+    }
 }
-}
-$query = "SET @autoid :=0";
+$query = 'SET @autoid :=0';
 mysqli_query($db, $query);
-$query = "UPDATE client SET id = @autoid := (@autoid+1)";
+$query = 'UPDATE client SET client_id = @autoid := (@autoid+1)';
 mysqli_query($db, $query);
-$query = "ALTER TABLE client AUTO_INCREMENT = 1";
+$query = 'ALTER TABLE client AUTO_INCREMENT = 1';
 mysqli_query($db, $query);
 mysqli_close($db);
 ?>
@@ -38,8 +47,8 @@ mysqli_close($db);
 <html lang="en">
 
   <?php
-  include('includes/header.php');
-  ?>
+  include 'includes/header.php';
+?>
 
 <body class="">
   <div class="container position-sticky z-index-sticky top-0">
@@ -63,39 +72,40 @@ mysqli_close($db);
                 <div class="login">
       <div class="container">
         <h1>Sign Up!<br> Your account</h1>
+
         <div class="login-form">
-                  <form method="POST" action="sign-in.php">
+        <form method="POST">
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">First Name</label>
-                      <input type="text" id = "fname" name="fname" class="form-control">
+                      <label for="Fname" class="form-label">First Name</label>
+                      <input type="text" id = "Fname" name="Fname" class="form-control">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Last Name</label>
-                      <input type="text" id = "lname" name="lname" class="form-control">
+                      <label for="Lname" class="form-label">Last Name</label>
+                      <input type="text" id = "Lname" name="Lname" class="form-control">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">
-                      Birthday</label>
-                      <input type="date" id ="birthday" name="birthday" class="form-control text-center">
+                      <label for="Birthday" class="form-label">Birthday</label>
+                      <input type="date" id ="Birthday" name="Birthday" class="form-control text-center">
                     </div>
                     
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Address</label>
+                      <label for="address" class="form-label">Address</label>
                       <input type="text" id = "address" name="address" class="form-control">
                     </div>
 
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Email</label>
+                      <label for="email" class="form-label">Email</label>
                       <input type="email" id = "email" name="email" class="form-control">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label">Password</label>
+                      <label for="password" class="form-label">Password</label>
                       <input type="password" id ="password" name="password" class="form-control">
                     </div>
                     <div class="text-center">
                       <button type="submit" name="submit"class="btn btn-lg bg-gradient-primary btn-lg w-100 mt-4 mb-0">Sign Up</button>
                     </div>
                   </form>
+
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
@@ -110,7 +120,6 @@ mysqli_close($db);
       </div>
     </section>
   </main>
-  <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -124,9 +133,7 @@ mysqli_close($db);
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.0.5"></script>
 </body>
 
