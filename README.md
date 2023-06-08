@@ -30,6 +30,7 @@
       - Delete - The admin can delete/cancel orders of the users.
 
 ## Visuals
+CLICK IMAGE TO VIEW THE GIF
 ![AllCRUD](images/CRUD-PHP.gif)
 
 ![Index Page](images/index-page.png)
